@@ -21,7 +21,7 @@ export function NavigationBar() {
   const { setTheme } = useTheme();
   return (
     <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
-      <div className="text-xl font-semibold">Teoman Kirma</div>
+      <div className="text-md font-semibold">Teoman Kirma</div>
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="ml-auto lg:hidden">
@@ -33,7 +33,7 @@ export function NavigationBar() {
           <VisuallyHidden>
             <SheetTitle>Navigation Menu</SheetTitle>
           </VisuallyHidden>
-          <div className="grid gap-2 py-6">
+          <div className="grid gap-2 py-10">
             <Button variant="ghost" className="w-full justify-start" size="lg">
               Home
             </Button>
@@ -63,13 +63,22 @@ export function NavigationBar() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
+                <DropdownMenuItem
+                  onClick={() => setTheme("light")}
+                  className="cursor-pointer"
+                >
                   Light
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                <DropdownMenuItem
+                  onClick={() => setTheme("dark")}
+                  className="cursor-pointer"
+                >
                   Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
+                <DropdownMenuItem
+                  onClick={() => setTheme("system")}
+                  className="cursor-pointer"
+                >
                   System
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -87,19 +96,32 @@ export function NavigationBar() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme("light")}>
+            <DropdownMenuItem
+              onClick={() => setTheme("light")}
+              className="cursor-pointer"
+            >
               Light
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("dark")}>
+            <DropdownMenuItem
+              onClick={() => setTheme("dark")}
+              className="cursor-pointer"
+            >
               Dark
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("system")}>
+            <DropdownMenuItem
+              onClick={() => setTheme("system")}
+              className="cursor-pointer"
+            >
               System
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <Button variant="ghost">🇹🇷</Button>
-        <Button variant="ghost">🇺🇸</Button>
+        <Button variant="ghost" className="text-xl">
+          🇹🇷
+        </Button>
+        <Button variant="ghost" className="text-xl">
+          🇺🇸
+        </Button>
       </div>
     </header>
   );
