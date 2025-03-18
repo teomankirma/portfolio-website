@@ -1,15 +1,13 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Spacer } from "@/components";
+import { Heading, Spacer } from "@/components";
 import { Download } from "lucide-react";
 
 export function KnowMeMore() {
   return (
     <div className="min-h-screen">
-      <h1 className="text-4xl font-bold text-center">Know Me More</h1>
-      <Separator className="my-4 mx-auto max-w-20 border-b-3 border-green-500" />
-      <Spacer y={4} />
+      <Heading text="Know Me More" />
       <div className="grid grid-cols-12 gap-20 px-16">
         <div className="col-span-7">
           <div className="text-2xl font-bold">

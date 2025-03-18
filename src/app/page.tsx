@@ -1,4 +1,10 @@
-import { NavigationBar, HomePage, KnowMeMore } from "@/components";
+import {
+  NavigationBar,
+  HomePage,
+  KnowMeMore,
+  WhatIDo,
+  Resume,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -7,6 +13,8 @@ export default function Home() {
       <main className="flex-1">
         <HomePage />
         <KnowMeMore />
+        <WhatIDo />
+        <Resume />
       </main>
     </div>
   );
