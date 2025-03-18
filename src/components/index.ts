@@ -5,6 +5,7 @@ import { HomePage } from "./HomePage";
 import { WhatIDo } from "./WhatIDo";
 import { Heading } from "./Heading";
 import { Resume } from "./Resume";
+import { ClientSpeak } from "./ClientSpeak";
 
 export {
   KnowMeMore,
@@ -14,4 +15,5 @@ export {
   WhatIDo,
   Heading,
   Resume,
+  ClientSpeak,
 };
