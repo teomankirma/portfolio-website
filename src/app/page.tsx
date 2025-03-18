@@ -1,4 +1,10 @@
-import { NavigationBar, HomePage, KnowMeMore, WhatIDo } from "@/components";
+import {
+  NavigationBar,
+  HomePage,
+  KnowMeMore,
+  WhatIDo,
+  Resume,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -8,6 +14,7 @@ export default function Home() {
         <HomePage />
         <KnowMeMore />
         <WhatIDo />
+        <Resume />
       </main>
     </div>
   );
