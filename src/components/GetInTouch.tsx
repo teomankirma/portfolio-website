@@ -16,10 +16,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Textarea } from "./ui/textarea";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 export function GetInTouch() {
   const form = useForm<z.infer<typeof formSchema>>({
