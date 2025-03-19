@@ -6,6 +6,7 @@ import { WhatIDo } from "./WhatIDo";
 import { Heading } from "./Heading";
 import { Resume } from "./Resume";
 import { ClientSpeak } from "./ClientSpeak";
+import { GetInTouch } from "./GetInTouch";
 
 export {
   KnowMeMore,
@@ -16,4 +17,5 @@ export {
   Heading,
   Resume,
   ClientSpeak,
+  GetInTouch,
 };
