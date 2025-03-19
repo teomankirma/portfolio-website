@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +13,30 @@ import { LanguageEnum } from "@/types";
 
 export function ChangeLanguage() {
   const { language, updateState } = usePortfolioStore();
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+
+    // Detect browser language only after initial render
+    const browserLang = navigator.language || navigator.languages?.[0] || "";
+
+    if (browserLang.startsWith("tr")) {
+      updateState({ language: LanguageEnum.TURKISH });
+    } else {
+      updateState({ language: LanguageEnum.ENGLISH });
+    }
+  }, [updateState]);
+
+  // During SSR and first render, use a default to prevent hydration mismatch
+  if (!hasMounted) {
+    return (
+      <Button variant="ghost" size="icon" className="pt-0.25 text-xl">
+        <span>🌐</span>
+        <span className="sr-only">Change language</span>
+      </Button>
+    );
+  }
 
   return (
     <>
