@@ -4,13 +4,14 @@ import { LanguageEnum } from "@/types";
 
 interface PortfolioState {
   language: string;
+  updateState: (partialState: Partial<PortfolioState>) => void;
 }
 
 const initialState = {
   language: LanguageEnum.ENGLISH,
 };
 
-export const useStore = create<PortfolioState>()(
+export const usePortfolioStore = create<PortfolioState>()(
   devtools((set) => ({
     ...initialState,
 

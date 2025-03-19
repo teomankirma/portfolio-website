@@ -7,6 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { ChangeTheme } from "./ChangeTheme";
+import { ChangeLanguage } from "./ChangeLanguage";
 
 export function NavigationBar() {
   return (
@@ -48,12 +49,7 @@ export function NavigationBar() {
       </Sheet>
       <div className="ml-auto hidden lg:flex gap-4">
         <ChangeTheme />
-        <Button variant="ghost" className="text-xl">
-          🇹🇷
-        </Button>
-        <Button variant="ghost" className="text-xl">
-          🇺🇸
-        </Button>
+        <ChangeLanguage />
       </div>
     </header>
   );
