@@ -4,6 +4,8 @@ import {
   KnowMeMore,
   WhatIDo,
   Resume,
+  ClientSpeak,
+  GetInTouch,
 } from "@/components";
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
         <KnowMeMore />
         <WhatIDo />
         <Resume />
+        <ClientSpeak />
+        <GetInTouch />
       </main>
     </div>
   );
