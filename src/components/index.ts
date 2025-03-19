@@ -7,6 +7,7 @@ import { Heading } from "./Heading";
 import { Resume } from "./Resume";
 import { ClientSpeak } from "./ClientSpeak";
 import { GetInTouch } from "./GetInTouch";
+import { ChangeTheme } from "./ChangeTheme";
 
 export {
   KnowMeMore,
@@ -18,4 +19,5 @@ export {
   Resume,
   ClientSpeak,
   GetInTouch,
+  ChangeTheme,
 };
