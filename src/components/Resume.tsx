@@ -15,7 +15,7 @@ import { Download } from "lucide-react";
 
 export function Resume() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="resume">
       <Heading text="Resume" />
       <div className="flex flex-col max-w-6xl mx-auto space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

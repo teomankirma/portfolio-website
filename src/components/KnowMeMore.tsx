@@ -6,7 +6,7 @@ import { Download } from "lucide-react";
 
 export function KnowMeMore() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="know-me-more">
       <Heading text="Know Me More" />
       <div className="grid grid-cols-12 gap-20 px-16">
         <div className="col-span-7">

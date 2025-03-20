@@ -9,7 +9,7 @@ import { Spacer } from "./Spacer";
 
 export function HomePage() {
   return (
-    <div className="flex min-h-screen justify-center">
+    <div className="flex min-h-screen justify-center" id="home">
       <div className="flex flex-col items-center w-full">
         <Avatar className="h-60 w-60 mt-20">
           <AvatarImage

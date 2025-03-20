@@ -36,7 +36,7 @@ export function GetInTouch() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="get-in-touch">
       <Heading text="Get In Touch" />
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="space-y-10">

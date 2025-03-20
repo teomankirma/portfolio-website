@@ -11,12 +11,12 @@ import { ChangeTheme, ChangeLanguage } from "@/components";
 
 export function NavigationBar() {
   const navItems = [
-    { href: "", label: "Home" },
-    { href: "", label: "Know Me More" },
-    { href: "", label: "What I Do" },
-    { href: "", label: "Resume" },
-    { href: "", label: "Client Speak" },
-    { href: "", label: "Get In Touch" },
+    { href: "#home", label: "Home" },
+    { href: "#know-me-more", label: "Know Me More" },
+    { href: "#what-i-do", label: "What I Do" },
+    { href: "#resume", label: "Resume" },
+    { href: "#client-speak", label: "Client Speak" },
+    { href: "#get-in-touch", label: "Get In Touch" },
   ];
 
   return (

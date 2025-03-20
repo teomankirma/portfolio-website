@@ -69,7 +69,7 @@ const testimonials = [
 
 export function ClientSpeak() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="client-speak">
       <Heading text="Client Speak" />
       <div className="flex justify-center items-center">
         <Carousel className="w-full max-w-md">
