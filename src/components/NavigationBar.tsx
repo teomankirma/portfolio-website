@@ -5,11 +5,20 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { ChangeTheme } from "./ChangeTheme";
-import { ChangeLanguage } from "./ChangeLanguage";
+import { ChangeTheme, ChangeLanguage } from "@/components";
 
 export function NavigationBar() {
+  const navItems = [
+    { href: "", label: "Home" },
+    { href: "", label: "Know Me More" },
+    { href: "", label: "What I Do" },
+    { href: "", label: "Resume" },
+    { href: "", label: "Client Speak" },
+    { href: "", label: "Get In Touch" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-background border-b">
       <div className="text-md font-semibold">Teoman Kirma</div>
@@ -20,31 +29,27 @@ export function NavigationBar() {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="pl-4">
+        <SheetContent side="left" className="pl-6">
           <VisuallyHidden>
             <SheetTitle>Navigation Menu</SheetTitle>
           </VisuallyHidden>
-          <div className="grid gap-2 py-10">
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Home
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              About Me
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              What I Do
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Resume
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Portfolio
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Contact Me
-            </Button>
+          <div className="grid gap-6 py-14">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                className="w-full justify-start font-bold text-lg"
+                href={item.href}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
-          <div className="absolute bottom-6 right-2"></div>
+          <div className="absolute bottom-6 left-2">
+            <ChangeTheme />
+          </div>
+          <div className="absolute bottom-6 right-2">
+            <ChangeLanguage />
+          </div>
         </SheetContent>
       </Sheet>
       <div className="ml-auto hidden lg:flex gap-4">

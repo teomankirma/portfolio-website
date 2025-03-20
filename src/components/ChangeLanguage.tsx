@@ -54,9 +54,9 @@ export function ChangeLanguage() {
                 language: LanguageEnum.ENGLISH,
               })
             }
-            className="cursor-pointer"
+            className="cursor-pointer flex items-center gap-1"
           >
-            🇺🇸
+            🇺🇸<span className="pb-0.75">English</span>
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() =>
@@ -64,9 +64,9 @@ export function ChangeLanguage() {
                 language: LanguageEnum.TURKISH,
               })
             }
-            className="cursor-pointer"
+            className="cursor-pointer flex items-center gap-1"
           >
-            🇹🇷
+            🇹🇷 <span className="pb-0.75">Türkçe</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
