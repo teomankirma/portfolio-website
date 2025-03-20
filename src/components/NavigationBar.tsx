@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import {
   Sheet,
   SheetTrigger,
@@ -10,7 +13,14 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { ChangeTheme, ChangeLanguage } from "@/components";
 
 export function NavigationBar() {
-  const navItems = [
+  const [open, setOpen] = useState(false);
+
+  // Function to close the sheet
+  const closeSheet = () => {
+    setOpen(false);
+  };
+
+  const sections = [
     { href: "#home", label: "Home" },
     { href: "#know-me-more", label: "Know Me More" },
     { href: "#what-i-do", label: "What I Do" },
@@ -22,7 +32,7 @@ export function NavigationBar() {
   return (
     <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-background border-b">
       <div className="text-md font-semibold">Teoman Kirma</div>
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="ml-auto lg:hidden">
             <MenuIcon className="h-6 w-6" />
@@ -34,11 +44,12 @@ export function NavigationBar() {
             <SheetTitle>Navigation Menu</SheetTitle>
           </VisuallyHidden>
           <div className="grid gap-6 py-14">
-            {navItems.map((item) => (
+            {sections.map((item) => (
               <Link
                 key={item.label}
                 className="w-full justify-start font-bold text-lg"
                 href={item.href}
+                onClick={closeSheet}
               >
                 {item.label}
               </Link>
