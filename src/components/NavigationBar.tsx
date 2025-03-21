@@ -29,6 +29,29 @@ export function NavigationBar() {
     { href: "#get-in-touch", label: "Get In Touch" },
   ];
 
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navbarHeight = 80; // 5rem or h-20
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+
+    closeSheet();
+  };
+
   return (
     <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-background border-b">
       <div className="text-md font-semibold">Teoman Kirma</div>
@@ -49,7 +72,7 @@ export function NavigationBar() {
                 key={item.label}
                 className="w-full justify-start font-bold text-lg"
                 href={item.href}
-                onClick={closeSheet}
+                onClick={(e) => scrollToSection(e, item.href)}
               >
                 {item.label}
               </Link>
