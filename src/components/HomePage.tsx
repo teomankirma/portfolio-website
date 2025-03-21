@@ -1,11 +1,9 @@
 "use client";
 
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-
+import { Spacer } from "@/components";
+import { Avatar, AvatarFallback, AvatarImage, Button } from "@/components/ui";
 import { Typewriter } from "react-simple-typewriter";
-import { Spacer } from "./Spacer";
 
 export function HomePage() {
   return (

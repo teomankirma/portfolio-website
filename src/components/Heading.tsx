@@ -1,6 +1,6 @@
 import React from "react";
-import { Separator } from "@/components/ui/separator";
 import { Spacer } from "@/components";
+import { Separator } from "@/components/ui";
 
 export function Heading({ text }: { text: string }) {
   return (

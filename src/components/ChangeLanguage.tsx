@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui";
 import { usePortfolioStore } from "@/hooks/usePortfolioStore";
 import { LanguageEnum } from "@/types";
 
