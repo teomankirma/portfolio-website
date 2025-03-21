@@ -1,16 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
+import { ChangeTheme, ChangeLanguage } from "@/components";
 import {
+  Button,
   Sheet,
   SheetTrigger,
   SheetContent,
   SheetTitle,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui";
 import Link from "next/link";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { ChangeTheme, ChangeLanguage } from "@/components";
+import { scrollToSection } from "@/utils";
 
 export function NavigationBar() {
   const [open, setOpen] = useState(false);
@@ -28,29 +29,6 @@ export function NavigationBar() {
     { href: "#client-speak", label: "Client Speak" },
     { href: "#get-in-touch", label: "Get In Touch" },
   ];
-
-  const scrollToSection = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
-    const element = document.getElementById(targetId);
-
-    if (element) {
-      const navbarHeight = 80; // 5rem or h-20
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navbarHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-
-    closeSheet();
-  };
 
   return (
     <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-background border-b">
@@ -72,7 +50,10 @@ export function NavigationBar() {
                 key={item.label}
                 className="w-full justify-start font-bold text-lg"
                 href={item.href}
-                onClick={(e) => scrollToSection(e, item.href)}
+                onClick={(e) => {
+                  scrollToSection(e, item.href);
+                  closeSheet();
+                }}
               >
                 {item.label}
               </Link>

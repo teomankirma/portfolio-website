@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Heading } from "./Heading";
 import Image from "next/image";
 import { Mail } from "lucide-react";
 import Link from "next/link";
@@ -9,17 +8,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { formSchema } from "@/formSchema";
+import { Heading } from "@/components";
 import {
+  Button,
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+  Input,
+  Textarea,
+} from "@/components/ui";
 
 export function GetInTouch() {
   const form = useForm<z.infer<typeof formSchema>>({

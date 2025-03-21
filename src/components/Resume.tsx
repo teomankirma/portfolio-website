@@ -1,16 +1,16 @@
 import React from "react";
 import { Heading, Spacer } from "@/components";
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+  Progress,
+} from "@/components/ui";
 import Link from "next/link";
-import { Progress } from "@/components/ui/progress";
-import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
 export function Resume() {

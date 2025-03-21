@@ -1,7 +1,6 @@
 import React from "react";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import { Heading, Spacer } from "@/components";
+import { Button, Separator } from "@/components/ui";
 import { Download } from "lucide-react";
 
 export function KnowMeMore() {

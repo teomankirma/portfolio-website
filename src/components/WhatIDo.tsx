@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading } from "@/components";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
 import { LaptopMinimal } from "lucide-react";
 import Image from "next/image";
 

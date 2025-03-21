@@ -1,4 +1,4 @@
 export enum LanguageEnum {
-  TURKISH = "tr-TR",
-  ENGLISH = "en-US",
+  TURKISH = "TURKISH",
+  ENGLISH = "ENGLISH",
 }

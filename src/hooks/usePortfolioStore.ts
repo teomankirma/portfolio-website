@@ -3,7 +3,7 @@ import { devtools } from "zustand/middleware";
 import { LanguageEnum } from "@/types";
 
 interface PortfolioState {
-  language: string;
+  language: LanguageEnum;
   updateState: (partialState: Partial<PortfolioState>) => void;
 }
 
