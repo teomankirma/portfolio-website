@@ -6,7 +6,10 @@ import Image from "next/image";
 
 export function WhatIDo() {
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen">
+    <div
+      className="flex items-center justify-center flex-col min-h-screen"
+      id="what-i-do"
+    >
       <Heading text="What I Do" />
       <Card className="w-[300px]">
         <CardHeader>

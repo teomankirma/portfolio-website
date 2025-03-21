@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import {
   Sheet,
   SheetTrigger,
@@ -5,46 +8,82 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { ChangeTheme } from "./ChangeTheme";
-import { ChangeLanguage } from "./ChangeLanguage";
+import { ChangeTheme, ChangeLanguage } from "@/components";
 
 export function NavigationBar() {
+  const [open, setOpen] = useState(false);
+
+  // Function to close the sheet
+  const closeSheet = () => {
+    setOpen(false);
+  };
+
+  const sections = [
+    { href: "#home", label: "Home" },
+    { href: "#know-me-more", label: "Know Me More" },
+    { href: "#what-i-do", label: "What I Do" },
+    { href: "#resume", label: "Resume" },
+    { href: "#client-speak", label: "Client Speak" },
+    { href: "#get-in-touch", label: "Get In Touch" },
+  ];
+
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navbarHeight = 80; // 5rem or h-20
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+
+    closeSheet();
+  };
+
   return (
     <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-background border-b">
       <div className="text-md font-semibold">Teoman Kirma</div>
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="ml-auto lg:hidden">
             <MenuIcon className="h-6 w-6" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="pl-4">
+        <SheetContent side="left" className="pl-6">
           <VisuallyHidden>
             <SheetTitle>Navigation Menu</SheetTitle>
           </VisuallyHidden>
-          <div className="grid gap-2 py-10">
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Home
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              About Me
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              What I Do
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Resume
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Portfolio
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="lg">
-              Contact Me
-            </Button>
+          <div className="grid gap-6 py-14">
+            {sections.map((item) => (
+              <Link
+                key={item.label}
+                className="w-full justify-start font-bold text-lg"
+                href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
-          <div className="absolute bottom-6 right-2"></div>
+          <div className="absolute bottom-6 left-2">
+            <ChangeTheme />
+          </div>
+          <div className="absolute bottom-6 right-2">
+            <ChangeLanguage />
+          </div>
         </SheetContent>
       </Sheet>
       <div className="ml-auto hidden lg:flex gap-4">
