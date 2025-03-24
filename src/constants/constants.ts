@@ -3,7 +3,15 @@ export const CONSTANTS = {
     // General
     fullName: "Teoman Kirma",
 
-    // Home
+    // Navigation Bar
+    home: "Home",
+    knowMeMore: "Know Me More",
+    whatIDo: "What I Do",
+    resume: "Resume",
+    clientSpeak: "Client Speak",
+    getInTouch: "Get In Touch",
+
+    // Headings
     welcome: "Welcome",
     typewriter: [
       "I'm Teoman Kirma.",
@@ -17,6 +25,15 @@ export const CONSTANTS = {
     // General
     fullName: "Teoman Kırma",
 
+    // Headings
+    home: "Anasayfa",
+    knowMeMore: "Hakkımda",
+    whatIDo: "Neler Yapıyorum",
+    resume: "Özgeçmiş",
+    clientSpeak: "Müşteri Yorumları",
+    getInTouch: "İletişime Geç",
+
+    // Home
     welcome: "Hoş Geldiniz",
     typewriter: [
       "Ben Teoman Kırma.",
