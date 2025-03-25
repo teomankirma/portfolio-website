@@ -33,7 +33,7 @@ export function HomePage() {
           />
         </div>
         <Spacer y={2} />
-        <h1 className="text-2xl font-bold">{CONSTANTS[language].location}</h1>
+        <h1 className="text-2xl font-bold">{CONSTANTS[language].basedIn}</h1>
         <Spacer y={3} />
         <Button
           size={"lg"}
@@ -44,7 +44,9 @@ export function HomePage() {
             scrollToSection(e, "#get-in-touch");
           }}
         >
-          <span className="text-lg font-semibold">{CONSTANTS[language].hireMe}</span>
+          <span className="text-lg font-semibold">
+            {CONSTANTS[language].hireMe}
+          </span>
         </Button>
       </div>
     </div>

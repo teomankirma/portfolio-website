@@ -6,11 +6,10 @@ import { Button, Separator } from "@/components/ui";
 import { Download } from "lucide-react";
 import { CONSTANTS } from "@/constants/constants";
 import { usePortfolioStore } from "@/hooks/usePortfolioStore";
-import { calculateAge } from "@/utils";
+import Link from "next/link";
 
 export function KnowMeMore() {
   const { language } = usePortfolioStore();
-  const age = calculateAge();
 
   return (
     <div className="min-h-screen" id="know-me-more">
@@ -30,13 +29,23 @@ export function KnowMeMore() {
             {CONSTANTS[language].nameLabel} {CONSTANTS[language].fullName}
           </p>
           <Separator className="my-2" />
-          <p>Email: teomankirma@gmail.com</p>
-          <Separator className="my-2" />
           <p>
-            {CONSTANTS[language].ageLabel} {age}
+            Email: {""}
+            <Link
+              href={`mailto:${CONSTANTS.common.emailAddress}`}
+              className="font-bold text-green-500"
+            >
+              {CONSTANTS.common.emailAddress}
+            </Link>
           </p>
           <Separator className="my-2" />
-          <p>{CONSTANTS[language].fromLabel} Los Angeles, CA</p>
+          <p>
+            {CONSTANTS[language].ageLabel} {CONSTANTS.common.age}
+          </p>
+          <Separator className="my-2" />
+          <p>
+            {CONSTANTS[language].fromLabel} {CONSTANTS.common.location}
+          </p>
           <Spacer y={1} />
           <Button variant="ghost" className="bg-green-500">
             <Download /> {CONSTANTS[language].downloadResumeLabel}
@@ -46,16 +55,18 @@ export function KnowMeMore() {
       <Spacer y={8} />
       <div className="flex items-center justify-center gap-20">
         <div className="text-center">
-          <p className="text-4xl font-bold">3+</p>
+          <p className="text-4xl font-bold">
+            {CONSTANTS[language].experienceA}
+          </p>
           <Spacer y={0.75} />
-          <p className="text-sm">Years Experience</p>
+          <p className="text-sm">{CONSTANTS[language].experienceB}</p>
         </div>
 
         <div className="h-16 border-l-1 border-gray-400"></div>
         <div className="text-center">
-          <p className="text-4xl font-bold">30+</p>
+          <p className="text-4xl font-bold">{CONSTANTS[language].projectsA}</p>
           <Spacer y={0.75} />
-          <p className="text-sm">Projects Done</p>
+          <p className="text-sm">{CONSTANTS[language].projectsB}</p>
         </div>
       </div>
     </div>
