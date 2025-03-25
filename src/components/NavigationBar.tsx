@@ -35,7 +35,9 @@ export function NavigationBar() {
 
   return (
     <header className="bg-background sticky top-0 z-50 flex h-20 w-full shrink-0 items-center border-b px-4 md:px-6">
-      <div className="text-md font-semibold">Teoman Kirma</div>
+      <div className="text-md font-semibold">
+        {CONSTANTS[language].fullName}
+      </div>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="ml-auto lg:hidden">

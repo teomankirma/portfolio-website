@@ -18,3 +18,20 @@ export const scrollToSection = (
     });
   }
 };
+
+const BIRTH_DATE = new Date("07-27-2002");
+
+export function calculateAge(): number {
+  const today = new Date();
+  let age = today.getFullYear() - BIRTH_DATE.getFullYear();
+  const monthDiff = today.getMonth() - BIRTH_DATE.getMonth();
+
+  if (
+    monthDiff < 0 ||
+    (monthDiff === 0 && today.getDate() < BIRTH_DATE.getDate())
+  ) {
+    age--;
+  }
+
+  return age;
+}
