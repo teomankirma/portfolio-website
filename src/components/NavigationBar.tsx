@@ -12,8 +12,11 @@ import {
 import Link from "next/link";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { scrollToSection } from "@/utils";
+import { CONSTANTS } from "@/constants/constants";
+import { usePortfolioStore } from "@/hooks/usePortfolioStore";
 
 export function NavigationBar() {
+  const { language } = usePortfolioStore();
   const [open, setOpen] = useState(false);
 
   // Function to close the sheet
@@ -22,17 +25,19 @@ export function NavigationBar() {
   };
 
   const sections = [
-    { href: "#home", label: "Home" },
-    { href: "#know-me-more", label: "Know Me More" },
-    { href: "#what-i-do", label: "What I Do" },
-    { href: "#resume", label: "Resume" },
-    { href: "#client-speak", label: "Client Speak" },
-    { href: "#get-in-touch", label: "Get In Touch" },
+    { href: "#home", label: CONSTANTS[language].home },
+    { href: "#know-me-more", label: CONSTANTS[language].knowMeMore },
+    { href: "#what-i-do", label: CONSTANTS[language].whatIDo },
+    { href: "#resume", label: CONSTANTS[language].resume },
+    { href: "#client-speak", label: CONSTANTS[language].clientSpeak },
+    { href: "#get-in-touch", label: CONSTANTS[language].getInTouch },
   ];
 
   return (
-    <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-background border-b">
-      <div className="text-md font-semibold">Teoman Kirma</div>
+    <header className="bg-background sticky top-0 z-50 flex h-20 w-full shrink-0 items-center border-b px-4 md:px-6">
+      <div className="text-md font-semibold">
+        {CONSTANTS[language].fullName}
+      </div>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="ml-auto lg:hidden">
@@ -45,12 +50,12 @@ export function NavigationBar() {
             <SheetTitle>Navigation Menu</SheetTitle>
           </VisuallyHidden>
           <div className="grid gap-6 py-14">
-            {sections.map((item) => (
+            {sections.map(item => (
               <Link
                 key={item.label}
-                className="w-full justify-start font-bold text-lg"
+                className="w-full justify-start text-lg font-bold"
                 href={item.href}
-                onClick={(e) => {
+                onClick={e => {
                   scrollToSection(e, item.href);
                   closeSheet();
                 }}
@@ -62,12 +67,12 @@ export function NavigationBar() {
           <div className="absolute bottom-6 left-2">
             <ChangeTheme />
           </div>
-          <div className="absolute bottom-6 right-2">
+          <div className="absolute right-2 bottom-6">
             <ChangeLanguage />
           </div>
         </SheetContent>
       </Sheet>
-      <div className="ml-auto hidden lg:flex gap-4">
+      <div className="ml-auto hidden gap-4 lg:flex">
         <ChangeTheme />
         <ChangeLanguage />
       </div>
