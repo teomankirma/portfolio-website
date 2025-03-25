@@ -37,8 +37,8 @@ export function HomePage() {
         <Spacer y={3} />
         <Button
           size={"lg"}
-          variant="outline"
-          className="rounded-3xl bg-green-500 p-6 text-white hover:border-green-500 hover:bg-transparent dark:bg-green-500 dark:hover:border-green-500 dark:hover:bg-transparent"
+          variant="ghost"
+          className="rounded-3xl bg-green-500 p-6 text-white"
           onClick={e => {
             // @ts-expect-error ignore event type mismatch
             scrollToSection(e, "#get-in-touch");

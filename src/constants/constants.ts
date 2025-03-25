@@ -5,6 +5,7 @@ const age = calculateAge();
 export const CONSTANTS = {
   common: {
     age: age,
+    emailLabel: "Email:",
     emailAddress: "teomankirma@gmail.com",
     location: "Los Angeles, CA",
   },
