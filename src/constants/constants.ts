@@ -8,6 +8,7 @@ export const CONSTANTS = {
     emailLabel: "Email:",
     emailAddress: "teomankirma@gmail.com",
     location: "Los Angeles, CA",
+    resumeURL: "/assets/teoman-kirma-resume.pdf",
   },
   ENGLISH: {
     // General

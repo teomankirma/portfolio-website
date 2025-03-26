@@ -51,15 +51,17 @@ export function KnowMeMore() {
           </p>
           <Spacer y={1} />
           <div className="flex justify-center">
-            <Button
-              variant="ghost"
-              className="rounded-3xl bg-green-500 p-6 text-white"
-            >
-              <span className="inline-flex items-center gap-2 text-lg font-semibold">
-                <Download className="h-5 w-5" />
-                {CONSTANTS[language].downloadResumeLabel}
-              </span>
-            </Button>
+            <Link href={CONSTANTS.common.resumeURL}>
+              <Button
+                variant="ghost"
+                className="rounded-3xl bg-green-500 p-6 text-white"
+              >
+                <span className="inline-flex items-center gap-2 text-lg font-semibold">
+                  <Download className="h-5 w-5" />
+                  {CONSTANTS[language].downloadResumeLabel}
+                </span>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
