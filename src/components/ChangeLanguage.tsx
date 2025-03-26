@@ -18,15 +18,17 @@ export function ChangeLanguage() {
   useEffect(() => {
     setHasMounted(true);
 
-    // Detect browser language only after initial render
-    const browserLang = navigator.language || navigator.languages?.[0] || "";
+    // Only detect browser language if language hasn't been set yet
+    if (!language) {
+      const browserLang = navigator.language || navigator.languages?.[0] || "";
 
-    if (browserLang.startsWith("tr")) {
-      updateState({ language: LanguageEnum.TURKISH });
-    } else {
-      updateState({ language: LanguageEnum.ENGLISH });
+      if (browserLang.startsWith("tr")) {
+        updateState({ language: LanguageEnum.TURKISH });
+      } else {
+        updateState({ language: LanguageEnum.ENGLISH });
+      }
     }
-  }, [updateState]);
+  }, [updateState, language]);
 
   // During SSR and first render, use a default to prevent hydration mismatch
   if (!hasMounted) {
@@ -54,7 +56,7 @@ export function ChangeLanguage() {
                 language: LanguageEnum.ENGLISH,
               })
             }
-            className="cursor-pointer flex items-center gap-1"
+            className="flex cursor-pointer items-center gap-1"
           >
             🇺🇸<span className="pb-0.75">English</span>
           </DropdownMenuItem>
@@ -64,7 +66,7 @@ export function ChangeLanguage() {
                 language: LanguageEnum.TURKISH,
               })
             }
-            className="cursor-pointer flex items-center gap-1"
+            className="flex cursor-pointer items-center gap-1"
           >
             🇹🇷 <span className="pb-0.75">Türkçe</span>
           </DropdownMenuItem>
